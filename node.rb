@@ -10,10 +10,14 @@ class Node
   end
 
   def set_as_initial
-    self.distance = 0
+    @distance = 0
   end
 
   def initial?
-    !!self.distance
+    !!@distance
+  end
+
+  def distance_to node
+    @neighbors.include?(node) && node.distance
   end
 end

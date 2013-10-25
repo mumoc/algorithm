@@ -13,11 +13,20 @@ class Graph
   end
 
   def current_node
-    @current_node ||= self.initial_node
+    @current_node ||= @initial_node
   end
 
   def unvisited_nodes
-    @unvisited_nodes ||= @nodes.reject {|node| node.initial? }
+    @unvisited_nodes ||= @current_node.neighbors
+  end
+
+  def get_smaller_neighbor_distance
+    tentative_distance = 0
+    @unvisited_nodes.each do |node|
+      distance = @current_node.distance_to node
+      tentative_distance = distance if distance < tentative_distance
+    end
+    tentative_distance
   end
 
 end
