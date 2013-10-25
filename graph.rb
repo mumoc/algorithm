@@ -17,7 +17,7 @@ class Graph
   end
 
   def unvisited_nodes
-    @unvisited_nodes ||= @current_node.neighbors
+    @unvisited_nodes ||= self.current_node.neighbors
   end
 
   def get_smaller_neighbor_distance

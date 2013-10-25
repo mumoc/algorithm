@@ -70,7 +70,7 @@ describe Graph do
     end
 
     it 'retrieve unvisited nodes' do
-      expect(graph.unvisited_nodes).to eql(nodes)
+      expect(graph.unvisited_nodes).to eql(initial_node.neighbors)
     end
 
     it 'doesn\'t contain the initial node' do
@@ -80,7 +80,7 @@ describe Graph do
 
   describe '#get_smaller_neighbor_distance' do
     before do
-      graph.current_node = initial_node
+      graph.initial_node = initial_node
     end
 
     it 'returns the smaller distance' do
