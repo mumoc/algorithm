@@ -79,7 +79,6 @@ describe 'Integration' do
 
   describe '#shortest_path' do
     before do
-      node_a.set_as_initial
       graph.initial_node = node_a
       graph.target_node = node_f
     end

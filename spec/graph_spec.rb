@@ -26,15 +26,6 @@ describe Graph do
 
   let(:graph) { Graph.new }
 
-
-  describe 'default state' do
-    let(:new_graph) { Graph.new}
-
-    it 'sets nodes as an empty hash' do
-      expect(new_graph.nodes).to eql([])
-    end
-  end
-
   describe '#current_node' do
     context 'Non setting a current_node' do
       it 'defaults to initial node' do

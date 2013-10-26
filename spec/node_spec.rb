@@ -4,24 +4,6 @@ require './node'
 describe Node do
   subject { Node.new }
 
-  describe 'default state' do
-    it 'sets visited as false' do
-      expect(subject.visited).to be_false
-    end
-
-    it 'doesn\'t set any distance' do
-      expect(subject.distance).to be_nil
-    end
-
-    it 'sets neighbors as an array' do
-      expect(subject.neighbors).to be_instance_of Array
-    end
-
-    it 'sets name as an empty string' do
-      expect(subject.name).to eql('')
-    end
-  end
-
   describe '#set_as_initial' do
     let(:initial_node) { Node.new }
 

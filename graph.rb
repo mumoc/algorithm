@@ -22,6 +22,7 @@ class Graph
 
   def initial_node=(node)
     @path = { node.name => node }
+    node.set_as_initial
     @initial_node = node
   end
 
@@ -58,7 +59,7 @@ class Graph
   def calculate_full_distance
     full_distance = 0
     @path.each do |k, node|
-      full_distance = full_distance + (node.distance || 0) unless  node.name.match(@target_node.name)
+      full_distance = full_distance + (node.distance || 0)
     end
     full_distance
   end
