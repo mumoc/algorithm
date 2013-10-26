@@ -38,25 +38,21 @@ describe Node do
 
 
   describe '#distance_to' do
-    let(:node) { Node.new }
-    let(:other_node) do
-      node = Node.new
-      node.distance = 5
-      node
-    end
+    let(:node_b) { Node.new({ distance: 5 })}
+    let(:node) { Node.new( neighbors: []) }
 
     context 'having the node as neighbor' do
       before do
-        node.neighbors = [other_node]
+        node.neighbors = [node_b]
       end
       it 'retrieves the distance' do
-        expect(node.distance_to(other_node)).to eql(5)
+        expect(node.distance_to(node_b)).to eql(5)
       end
     end
 
     context 'not having the node as neighbor' do
       it 'returns nil' do
-        expect(node.distance_to(other_node)).to be_false
+        expect(node.distance_to(node_b)).to be_false
       end
     end
   end
