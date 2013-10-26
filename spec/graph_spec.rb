@@ -35,17 +35,6 @@ describe Graph do
     end
   end
 
-  describe '#initial_node' do
-    before do
-      graph.nodes = nodes
-    end
-
-    it 'retrieve the initial node' do
-      expect(graph.initial_node).to be_instance_of(Node)
-      expect(graph.initial_node.initial?).to be_true
-    end
-  end
-
   describe '#current_node' do
     context 'Non setting a current_node' do
       it 'defaults to initial node' do
@@ -86,5 +75,6 @@ describe Graph do
     it 'returns the smaller distance' do
       expect(graph.get_smaller_neighbor_distance).to eql(5)
     end
+
   end
 end
