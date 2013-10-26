@@ -5,8 +5,6 @@ class Node
     args.each do |k,v|
       instance_variable_set("@#{k}", v) unless v.nil?
     end
-    @name ||= ''
-    @neighbors ||= []
   end
 
   def set_as_initial

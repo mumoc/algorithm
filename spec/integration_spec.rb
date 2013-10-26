@@ -10,7 +10,7 @@ describe 'Integration' do
     node_d = Node.new({ name: 'D', distance: 14 })
 
     Node.new({ name: 'A',
-               neighbors: [node_b, node_c, node_d]
+               neighbors: [node_b, node_c, node_d],
             })
   end
 
@@ -66,19 +66,20 @@ describe 'Integration' do
 
   let(:graph) do
     Graph.new({
-      nodes: [
-        node_a,
-        node_b,
-        node_c,
-        node_d,
-        node_e,
-        node_f
-      ]
+      nodes: {
+        A: node_a,
+        B: node_b,
+        C: node_c,
+        D: node_d,
+        E: node_e,
+        F: node_f
+      }
     })
   end
 
   describe '#shortest_path' do
     before do
+      node_a.set_as_initial
       graph.initial_node = node_a
       graph.target_node = node_f
     end
